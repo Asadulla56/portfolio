@@ -1,60 +1,97 @@
 import React from "react";
-import { MapPin, GraduationCap, Code } from "lucide-react";
+import { Download, GraduationCap, MapPin, Code2 } from "lucide-react";
+import  motion  from "framer-motion";
+import myPhoto from "../assets/Picsart_25-06-25_22-59-47-897.jpg"; 
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Title */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
-        </div>
+    <section
+      id="about"
+      className="relative py-24 bg-gradient-to-br from-[#0A0F1C] via-[#0C1224] to-[#1A237E] text-white overflow-hidden"
+    >
+      {/* Floating Glow Effect */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(0,102,255,0.15),transparent_60%)]"></div>
 
-        {/* About Content */}
-        <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-md p-6 md:p-8">
-          <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-            I'm Md Asadulla, a Diploma student in Computer Science & Technology (CST). 
-            I enjoy creating clean, interactive, and user-friendly web interfaces. 
-            My passion lies in transforming ideas into beautiful, functional websites 
-            that provide exceptional user experiences.
-          </p>
+      <div className="container mx-auto max-w-6xl px-6 relative z-10">
+        <motion.h2
+          initial={{ opacity: 0, y: -40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl md:text-5xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500"
+        >
+          About Me
+        </motion.h2>
 
-          {/* Info Grid */}
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* Education */}
-            <div className="flex items-start space-x-3">
-              <div className="p-3 rounded-lg bg-blue-100">
-                <GraduationCap className="text-blue-600" size={24} />
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Profile Card */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+            className="relative flex justify-center"
+          >
+            <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-2xl overflow-hidden shadow-2xl group">
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/30 to-blue-600/30 group-hover:opacity-70 transition duration-500"></div>
+              <img
+                src={myPhoto}
+                alt="Md Asadulla"
+                className="relative  w-full h-full object-cover border-4 border-blue-500/30 shadow-lg"
+              />
+              <div className="absolute inset-0 border border-cyan-500/30 rounded-2xl"></div>
+            </div>
+          </motion.div>
+
+          {/* Text Info */}
+          <motion.div
+            initial={{ opacity: 0, x: 80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
+          >
+            <p className="text-lg leading-relaxed text-gray-300">
+              Hello! I'm{" "}
+              <span className="font-semibold text-cyan-400">
+                Md Asadulla
+              </span>
+              , a passionate front-end developer and Diploma student in Computer
+              Science & Technology. I love crafting clean, modern, and
+              responsive web interfaces using{" "}
+              <span className="font-semibold text-blue-400">React</span> and{" "}
+              <span className="font-semibold text-blue-400">Tailwind CSS</span>.
+              My goal is to turn ideas into beautiful digital experiences.
+            </p>
+
+            <div className="grid gap-4">
+              <div className="flex items-center gap-3 text-gray-300">
+                <Code2 className="w-5 h-5 text-cyan-400" />
+                <span>
+                  <strong>Specialization:</strong> Front-End Development
+                </span>
               </div>
-              <div>
-                <h3 className="font-semibold mb-1">Education</h3>
-                <p className="text-sm text-gray-500">Diploma in CST</p>
+              <div className="flex items-center gap-3 text-gray-300">
+                <GraduationCap className="w-5 h-5 text-cyan-400" />
+                <span>
+                  <strong>Education:</strong> Diploma in CST
+                </span>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300">
+                <MapPin className="w-5 h-5 text-cyan-400" />
+                <span>
+                  <strong>Location:</strong> Bangladesh
+                </span>
               </div>
             </div>
 
-            {/* Location */}
-            <div className="flex items-start space-x-3">
-              <div className="p-3 rounded-lg bg-blue-100">
-                <MapPin className="text-blue-600" size={24} />
-              </div>
-              <div>
-                <h3 className="font-semibold mb-1">Location</h3>
-                <p className="text-sm text-gray-500">Bangladesh</p>
-              </div>
-            </div>
-
-            {/* Focus */}
-            <div className="flex items-start space-x-3">
-              <div className="p-3 rounded-lg bg-blue-100">
-                <Code className="text-blue-600" size={24} />
-              </div>
-              <div>
-                <h3 className="font-semibold mb-1">Focus</h3>
-                <p className="text-sm text-gray-500">Frontend Development</p>
-              </div>
-            </div>
-          </div>
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              href="/Asad%20(3).pdf"
+              download
+              className="inline-flex items-center gap-2 mt-6 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full font-semibold shadow-lg hover:shadow-cyan-500/30 transition"
+            >
+              <Download className="w-5 h-5" />
+              Download CV
+            </motion.a>
+          </motion.div>
         </div>
       </div>
     </section>

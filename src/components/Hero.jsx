@@ -1,6 +1,6 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
-import myPhoto from "../assets/Picsart_25-06-25_22-59-47-897.jpg"; // এই লাইনটা যোগ করো
+import myPhoto from "../assets/Picsart_25-06-25_22-59-47-897.jpg"; 
 
 const Hero = () => {
   const scrollToSection = (href) => {
@@ -29,7 +29,7 @@ const Hero = () => {
             <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur-2xl opacity-30 animate-pulse"></div>
               <img
-                src={myPhoto} // এখানে import করা photo ব্যবহার করা হয়েছে
+                src={myPhoto} 
                 alt="Md Asadulla"
                 className="relative rounded-full w-full h-full object-cover border-4 border-blue-500/30 shadow-lg"
               />
