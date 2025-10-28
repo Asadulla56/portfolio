@@ -2,11 +2,12 @@ import React from "react";
 import { GraduationCap, Calendar } from "lucide-react";
 
 const Education = () => {
+  // Your education data remains the same
   const education = [
     {
       year: "2022 - 2025",
       course: "Diploma in Computer Science & Technology",
-      institution: "Moulviazar Polytechnic Institute",
+      institution: "Moulvibazar Polytechnic Institute", // Corrected spelling
       description:
         "Focused on web development, programming fundamentals, and software engineering.",
     },
@@ -23,39 +24,81 @@ const Education = () => {
     <section id="education" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Title */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Education</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
         </div>
 
-        {/* Education Cards */}
-        <div className="max-w-4xl mx-auto space-y-6">
-          {education.map((edu, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl shadow-md p-6 md:p-8 transform transition-all hover:scale-105 hover:shadow-lg"
-            >
-              <div className="flex flex-col md:flex-row md:items-start gap-4">
-                {/* Icon */}
-                <div className="flex-shrink-0">
-                  <div className="p-3 rounded-lg bg-blue-100">
-                    <GraduationCap className="text-blue-600" size={32} />
-                  </div>
-                </div>
+        {/* Timeline Wrapper */}
+        <div className="relative max-w-3xl mx-auto">
+          {/* The Vertical Line */}
+          <div className="absolute left-4 top-0 h-full w-0.5 bg-blue-300 z-0 lg:left-1/2 lg:-translate-x-1/2"></div>
 
-                {/* Education Info */}
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Calendar className="text-blue-600" size={16} />
-                    <span className="text-sm text-blue-600 font-medium">{edu.year}</span>
+          {/* Timeline Items */}
+          <div className="relative space-y-12">
+            {education.map((edu, index) => {
+              // Determine if the item should be on the right side (for desktop)
+              // index 0 (first item) will be on the right, index 1 (second) on the left, etc.
+              const isRightSide = index % 2 === 0;
+
+              return (
+                <div key={index} className="relative">
+                  {/* Timeline Node (Icon) */}
+                  <div className="absolute z-10 flex items-center justify-center w-10 h-10 bg-blue-600 rounded-full left-4 lg:left-1/2 -translate-x-1/2 border-4 border-white">
+                    <GraduationCap className="text-white" size={20} />
                   </div>
-                  <h3 className="text-xl font-bold mb-2">{edu.course}</h3>
-                  <p className="text-gray-600 font-medium mb-2">{edu.institution}</p>
-                  <p className="text-sm text-gray-500">{edu.description}</p>
+
+                  {/* Content Card Wrapper (handles positioning) */}
+                  <div
+                    className={`
+                      ml-14 lg:ml-0 lg:w-[calc(50%-2.5rem)]
+                      ${isRightSide ? "lg:ml-auto" : "lg:mr-auto"}
+                    `}
+                  _                  >
+                    {/* The Card */}
+                    <div
+                      className={`
+                        relative bg-white p-6 rounded-xl shadow-lg 
+                        hover:shadow-2xl transition-shadow duration-300
+                        before:content-[''] before:absolute before:top-5 
+                        before:w-4 before:h-4 before:bg-white before:rotate-45
+                        before:z-[-1]
+                        
+                        ${
+                          isRightSide
+                            ? "lg:text-left before:left-[-8px]" // Desktop Right
+                            : "lg:text-right before:left-auto before:right-[-8px]" // Desktop Left
+                        }
+                        
+                        before:left-[-8px] lg:before:left-auto
+                        ${isRightSide && "lg:before:left-[-8px]"}
+                      `}
+                    >
+                      {/* Year */}
+                      <div
+                        className={`flex items-center gap-2 mb-2 ${
+                          !isRightSide && "lg:justify-end"
+                        }`}
+                      >
+                        <Calendar className="text-blue-600" size={16} />
+                        <span className="text-sm text-blue-600 font-medium">
+                          {edu.year}
+                        </span>
+                      </div>
+                      {/* Course */}
+                      <h3 className="text-xl font-bold mb-2">{edu.course}</h3>
+                      {/* Institution */}
+                      <p className="text-gray-600 font-medium mb-2">
+                        {edu.institution}
+                      </p>
+                      {/* Description */}
+                      <p className="text-sm text-gray-500">{edu.description}</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>
