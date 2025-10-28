@@ -83,7 +83,7 @@ const Contact = () => {
                   <div className="p-2 rounded-lg bg-blue-100">
                     <Mail className="text-blue-600" size={20} />
                   </div>
-                  <span>asadulla@example.com</span>
+                  <span>mdasadullahoque294@gmail.com</span>
                 </a>
               </div>
             </div>
@@ -92,7 +92,7 @@ const Contact = () => {
               <h3 className="text-xl font-bold mb-4">Follow Me</h3>
               <div className="flex gap-4">
                 <a
-                  href="https://github.com/asadulla"
+                  href="https://github.com/Asadulla56"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-lg bg-blue-100 hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-110 flex items-center justify-center"
