@@ -1,5 +1,5 @@
 import React from "react";
-import { Code2, Palette, GitBranch } from "lucide-react"; // Removed unused imports (Figma, Github)
+import { Code2, Palette, GitBranch } from "lucide-react"; 
 
 const Skills = () => {
   const skillCategories = [
