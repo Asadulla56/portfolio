@@ -1,6 +1,7 @@
 import React from "react";
-import { ArrowRight } from "lucide-react";
-import myPhoto from "../assets/Picsart_25-06-25_22-59-47-897.jpg"; 
+import { ArrowRight, Code2, Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
+
 
 const Hero = () => {
   const scrollToSection = (href) => {
@@ -11,65 +12,91 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center bg-gradient-to-b from-blue-50 to-white relative overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center bg-gradient-to-b from-[#0A0F1C] via-[#0C1224] to-[#1A237E] text-white overflow-hidden"
     >
-      {/* Animated background */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 -left-20 w-72 h-72 bg-blue-500/20 rounded-full blur-3xl animate-pulse"></div>
-        <div
-          className="absolute bottom-1/4 -right-20 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse"
-          style={{ animationDelay: "1s" }}
-        ></div>
-      </div>
+      {/* Glowing background orbs */}
+      <div className="absolute -top-32 -left-32 w-96 h-96 bg-cyan-500/20 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-0 -right-32 w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-3xl animate-pulse"></div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-          {/* Left side - Photo */}
-          <div className="order-2 md:order-1 animate-slide-in-left">
-            <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full blur-2xl opacity-30 animate-pulse"></div>
-              <img
-                src={myPhoto} 
-                alt="Md Asadulla"
-                className="relative rounded-full w-full h-full object-cover border-4 border-blue-500/30 shadow-lg"
-              />
-            </div>
+      <div className="relative z-10 text-center px-6 max-w-3xl">
+        {/* Greeting */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="flex items-center justify-center gap-2 mb-4"
+        >
+          <Sparkles className="w-5 h-5 text-cyan-400" />
+          <p className="text-cyan-400 font-medium tracking-wide">
+            Hi, I'm glad you're here
+          </p>
+        </motion.div>
+
+        {/* Name */}
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-4xl md:text-6xl font-extrabold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500"
+        >
+          Md Asadulla
+        </motion.h1>
+
+        {/* Role */}
+        <motion.h2
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9 }}
+          className="text-2xl md:text-3xl text-gray-300 font-semibold mb-6"
+        >
+          Front-End Developer 
+        </motion.h2>
+
+        {/* Short intro */}
+        <motion.p
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          className="text-gray-400 text-lg md:text-xl mb-10 leading-relaxed"
+        >
+          I craft modern, responsive, and user-friendly web experiences.
+          Turning ideas into interactive digital products is what I love most.
+        </motion.p>
+
+        {/* Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.1 }}
+          className="flex flex-col sm:flex-row gap-4 justify-center"
+        >
+          <button
+            onClick={() => scrollToSection("#projects")}
+            className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full text-white font-semibold flex items-center justify-center gap-2 shadow-lg hover:shadow-cyan-500/30 transition-transform hover:scale-105"
+          >
+            View My Work
+            <ArrowRight className="w-5 h-5" />
+          </button>
+
+          <button
+            onClick={() => scrollToSection("#contact")}
+            className="px-8 py-3 border-2 border-cyan-400 rounded-full text-cyan-400 font-semibold hover:bg-cyan-400 hover:text-white transition-all duration-300"
+          >
+            Contact Me
+          </button>
+        </motion.div>
+
+        {/* Floating code icon */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1.2, duration: 0.8 }}
+          className="absolute bottom-10 right-10 hidden md:block"
+        >
+          <div className="p-4 bg-white/10 backdrop-blur-md rounded-2xl border border-cyan-400/20 shadow-lg">
+            <Code2 className="w-8 h-8 text-cyan-400 animate-bounce" />
           </div>
-
-          {/* Right side - Info */}
-          <div className="order-1 md:order-2 text-center md:text-left animate-slide-in-right">
-            <h2 className="text-lg md:text-xl text-blue-600 mb-2 font-medium">
-              Hi, I'm
-            </h2>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-800">
-              Md Asadulla
-            </h1>
-            <h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Front-End Developer
-            </h3>
-
-            {/* Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <button
-                className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full hover:opacity-90 transition-all duration-300 shadow-md flex items-center justify-center group"
-                onClick={() => scrollToSection("#projects")}
-              >
-                View My Work
-                <ArrowRight
-                  className="ml-2 group-hover:translate-x-1 transition-transform"
-                  size={18}
-                />
-              </button>
-
-              <button
-                className="px-6 py-3 border-2 border-blue-600 text-blue-600 rounded-full hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-md flex items-center justify-center"
-                onClick={() => scrollToSection("#contact")}
-              >
-                Contact Me
-              </button>
-            </div>
-          </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

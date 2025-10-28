@@ -1,7 +1,7 @@
 import React from "react";
 import { Download, GraduationCap, MapPin, Code2 } from "lucide-react";
-import  motion  from "framer-motion";
-import myPhoto from "../assets/Picsart_25-06-25_22-59-47-897.jpg"; 
+import { motion } from "framer-motion";
+import myPhoto from '../assets/Picsart_25-06-25_22-59-47-897.jpg'
 
 const About = () => {
   return (
@@ -35,7 +35,7 @@ const About = () => {
               <img
                 src={myPhoto}
                 alt="Md Asadulla"
-                className="relative  w-full h-full object-cover border-4 border-blue-500/30 shadow-lg"
+                className="w-full h-full object-cover rounded-2xl grayscale group-hover:grayscale-0 transition duration-500"
               />
               <div className="absolute inset-0 border border-cyan-500/30 rounded-2xl"></div>
             </div>
@@ -84,7 +84,7 @@ const About = () => {
 
             <motion.a
               whileHover={{ scale: 1.05 }}
-              href="/Asad%20(3).pdf"
+              href="/Md-Asadulla-CV.pdf"
               download
               className="inline-flex items-center gap-2 mt-6 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full font-semibold shadow-lg hover:shadow-cyan-500/30 transition"
             >
