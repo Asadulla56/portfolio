@@ -67,7 +67,7 @@ const Contact = () => {
                     <Github size={24} />
                   </a>
                   <a
-                    href="https://linkedin.com/in/asadulla"
+                    href="https://www.linkedin.com/in/md-asadulla-221276340/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 flex items-center justify-center bg-white/20 rounded-lg text-white hover:bg-white/30 transition-all duration-300 hover:scale-110"

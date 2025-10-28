@@ -11,7 +11,7 @@ const Projects = () => {
         "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=500&fit=crop",
       tech: ["React", "Tailwind CSS", "Node.js", "Express", "MongoDB"],
       liveUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/Asadulla56/Hostel-Booking",
     },
     {
       title: "E-Commerce Dashboard",
@@ -38,7 +38,6 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Title */}
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Projects</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
@@ -49,7 +48,6 @@ const Projects = () => {
               key={index}
               className="bg-white rounded-xl shadow-md overflow-hidden transform transition-all hover:scale-105 hover:shadow-lg group flex flex-col"
             >
-              {/* Image Container */}
               <div className="relative overflow-hidden h-48">
                 <img
                   src={project.image}
@@ -58,8 +56,6 @@ const Projects = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
               </div>
-
-              {/* Content Container (flex-1 and flex-col to make cards equal height) */}
               <div className="p-6 flex-1 flex flex-col">
                 <h3 className="text-xl font-bold mb-2 group-hover:text-blue-600 transition-colors">
                   {project.title}
@@ -68,7 +64,6 @@ const Projects = () => {
                   {project.description}
                 </p>
 
-                {/* Tech Pills */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tech.map((tech, i) => (
                     <span

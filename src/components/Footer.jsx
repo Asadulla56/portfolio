@@ -10,7 +10,7 @@ const Footer = () => {
     <footer className="bg-gray-900 text-gray-300">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-6">
-          <h3 className="text-2xl font-bold text-white">Md Asadulla</h3>
+          <h3 className="text-2xl font-bold text-white">Md.Asadulla</h3>
           <div className="flex items-center gap-5">
             <a
               href="https://github.com/Asadulla56"
@@ -22,7 +22,7 @@ const Footer = () => {
               <Github size={24} />
             </a>
             <a
-              href="https://linkedin.com/in/asadulla"
+              href="https://www.linkedin.com/in/md-asadulla-221276340/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-blue-500 hover:scale-110 transform transition-all duration-300"
@@ -42,7 +42,7 @@ const Footer = () => {
         <hr className="border-t border-gray-700" />
         <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-4 mt-6">
           <p className="text-sm text-gray-500 text-center md:text-left">
-            © {new Date().getFullYear()} Md Asadulla. All rights reserved.
+            © {new Date().getFullYear()} Md.Asadulla. All rights reserved.
           </p>
 
           {/* Back to Top */}
