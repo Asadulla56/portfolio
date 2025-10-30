@@ -2,7 +2,7 @@ import React from "react";
 import { ArrowRight, Sparkles } from "lucide-react"; 
 import { motion } from "framer-motion";
 
-import myPhoto from "../assets/Picsart_25-06-25_22-59-47-897.jpg";
+import myPhoto from "../assets/Asad.png";
 
 const Hero = () => {
   const scrollToSection = (href) => {
