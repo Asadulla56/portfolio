@@ -4,6 +4,7 @@ import { Menu, X } from "lucide-react";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeItem, setActiveItem] = useState("Home"); 
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,20 +23,19 @@ const Navbar = () => {
     { name: "Contact", href: "#contact" },
   ];
 
-  const scrollToSection = (href) => {
+  const scrollToSection = (href, name) => {
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
       setIsOpen(false);
+      setActiveItem(name); 
     }
   };
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-white/90 backdrop-blur-lg shadow-md"
-          : "bg-transparent"
+        scrolled ? "bg-white/90 backdrop-blur-lg shadow-md" : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -46,7 +46,7 @@ const Navbar = () => {
             className="text-xl md:text-2xl font-bold bg-linear-to-r from-blue-600 to-indigo-500 bg-clip-text text-transparent"
             onClick={(e) => {
               e.preventDefault();
-              scrollToSection("#home");
+              scrollToSection("#home", "Home");
             }}
           >
             Md.Asadulla
@@ -57,8 +57,12 @@ const Navbar = () => {
             {menuItems.map((item) => (
               <button
                 key={item.name}
-                className="text-gray-800 hover:text-blue-600 px-3 py-2 rounded-md transition-all duration-300"
-                onClick={() => scrollToSection(item.href)}
+                className={`px-3 py-2 rounded-md transition-all duration-300 ${
+                  activeItem === item.name
+                    ? "text-blue-600"
+                    : "text-gray-800 hover:text-blue-600"
+                }`}
+                onClick={() => scrollToSection(item.href, item.name)}
               >
                 {item.name}
               </button>
@@ -80,8 +84,12 @@ const Navbar = () => {
             {menuItems.map((item) => (
               <button
                 key={item.name}
-                className="block w-full text-left px-4 py-2 text-gray-800 hover:text-blue-600 hover:bg-gray-100 transition-all duration-300 rounded-lg"
-                onClick={() => scrollToSection(item.href)}
+                className={`block w-full text-left px-4 py-2 rounded-lg transition-all duration-300 ${
+                  activeItem === item.name
+                    ? "text-blue-600 bg-gray-100"
+                    : "text-gray-800 hover:text-blue-600 hover:bg-gray-100"
+                }`}
+                onClick={() => scrollToSection(item.href, item.name)}
               >
                 {item.name}
               </button>
