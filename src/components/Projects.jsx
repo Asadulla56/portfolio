@@ -14,14 +14,14 @@ const Projects = () => {
       githubUrl: "https://github.com/Asadulla56/Hostel-Booking",
     },
     {
-      title: "E-Commerce Dashboard",
+      title: "E-Commerce shopHub",
       description:
         "Admin dashboard for managing products, orders, and customer data with real-time analytics.",
       image:
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop",
-      tech: ["React", "Tailwind CSS", "Chart.js"],
+      tech: ["React", "Tailwind CSS"],
       liveUrl: "#",
-      githubUrl: "#",
+      githubUrl: "https://github.com/Asadulla56/shophub",
     },
     {
       title: "Task Management App",
