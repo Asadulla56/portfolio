@@ -20,7 +20,7 @@ const Projects = () => {
       image:
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop",
       tech: ["React", "Tailwind CSS"],
-      liveUrl: "#",
+      liveUrl: "https://shophub-liard.vercel.app",
       githubUrl: "https://github.com/Asadulla56/shophub",
     },
     {
