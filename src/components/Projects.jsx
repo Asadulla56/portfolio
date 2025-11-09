@@ -24,14 +24,12 @@ const Projects = () => {
       githubUrl: "https://github.com/Asadulla56/shophub",
     },
     {
-      title: "Task Management App",
-      description:
-        "Collaborative task management tool with drag-and-drop functionality and team features.",
-      image:
-        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=500&fit=crop",
+      title: "Book-Vibe",
+      description: "BookVibe — A modern book discovery app with search, ratings, and favorite features.",
+      image: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800&h=500&fit=crop",
       tech: ["React", "Tailwind CSS", "Firebase"],
-      liveUrl: "#",
-      githubUrl: "#",
+      liveUrl: "https://book-vibe-ivory.vercel.app/",
+      githubUrl: "https://github.com/Asadulla56/Book-vibe",
     },
   ];
 
