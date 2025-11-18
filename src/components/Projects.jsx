@@ -14,19 +14,20 @@ const Projects = () => {
       githubUrl: "https://github.com/Asadulla56/Hostel-Booking",
     },
     {
-      title: "E-Commerce shopHub",
+      title: "Bistro Boss",
       description:
         "Admin dashboard for managing products, orders, and customer data with real-time analytics.",
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop",
-      tech: ["React", "Tailwind CSS"," Firebase"],
-      liveUrl: "https://startling-smakager-6ca26a.netlify.app/",
+      image: "https://i.ibb.co/Z1YYCNQ8/01.jpg",
+      tech: ["React", "Tailwind CSS", " Firebase"],
+      liveUrl: "https://shophub-62lg.vercel.app",
       githubUrl: "https://github.com/Asadulla56/bistroBoss",
     },
     {
       title: "Book-Vibe",
-      description: "BookVibe — A modern book discovery app with search, ratings, and favorite features.",
-      image: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800&h=500&fit=crop",
+      description:
+        "BookVibe — A modern book discovery app with search, ratings, and favorite features.",
+      image:
+        "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800&h=500&fit=crop",
       tech: ["React", "Tailwind CSS", "Firebase"],
       liveUrl: "https://book-vibe-ivory.vercel.app/",
       githubUrl: "https://github.com/Asadulla56/Book-vibe",

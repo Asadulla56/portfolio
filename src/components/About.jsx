@@ -126,7 +126,7 @@ const About = () => {
           <div className="text-center mt-10">
             <motion.a
               whileHover={{ scale: 1.05 }}
-              href="/Asad_CV_Resume.pdf"
+              href="/Asad_Resume.pdf"
               download
               className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-full font-semibold shadow-lg hover:shadow-cyan-500/30 transition"
             >
