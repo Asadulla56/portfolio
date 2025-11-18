@@ -19,9 +19,9 @@ const Projects = () => {
         "Admin dashboard for managing products, orders, and customer data with real-time analytics.",
       image:
         "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop",
-      tech: ["React", "Tailwind CSS"],
-      liveUrl: "https://shophub-liard.vercel.app",
-      githubUrl: "https://github.com/Asadulla56/shophub",
+      tech: ["React", "Tailwind CSS"," Firebase"],
+      liveUrl: "https://startling-smakager-6ca26a.netlify.app/",
+      githubUrl: "https://github.com/Asadulla56/bistroBoss",
     },
     {
       title: "Book-Vibe",
